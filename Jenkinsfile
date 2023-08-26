@@ -1,15 +1,13 @@
 pipeline {
     agent {
         node {
-            label 'slave'
+            label 'slave01'
         }
     }
     stages {
         stage('build image') {
             steps {
-                script {
-                    sh 'docker build -t new .'
-                }
+                sh 'docker build -t app .'
             }
         }
         stage('push image') {
